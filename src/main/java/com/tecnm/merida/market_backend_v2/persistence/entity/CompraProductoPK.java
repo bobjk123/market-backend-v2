@@ -29,4 +29,18 @@ public class CompraProductoPK implements Serializable {
     public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CompraProductoPK that = (CompraProductoPK) o;
+        return java.util.Objects.equals(idCompra, that.idCompra) &&
+                java.util.Objects.equals(idProducto, that.idProducto);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(idCompra, idProducto);
+    }
 }
